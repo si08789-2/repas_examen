@@ -1,9 +1,20 @@
 function sumaTotal(llista) {
     let total = 0;
     for (let i = 0; i < llista.length; i++) {
-        total += llista[i];  // Es pot optimitzar reduint el nombre d'iteracions
+        total += llista[i]; 
     }
     return total;
+}
+
+function esPrimer(num) {
+    if (num < 2) return false;
+    let limit = Math.sqrt(num);
+    for (let i = 2; i <= limit; i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true;
 }
 
 function comptarPrimers(llista) {
@@ -15,6 +26,8 @@ function comptarPrimers(llista) {
     }
     return comptador;
 }
+
+
 
 function sumaMatriuPerColumnes(matriu) {
     let suma = 0;
@@ -52,3 +65,4 @@ console.log("Suma total:", sumaTotal(nums));
 console.log("Primers:", comptarPrimers(nums));
 console.log("Suma matriu:", sumaMatriuPerColumnes(nums));
 console.log("Llista amb condicio:", processarLlistaAmbCondicio(nums,parell));
+
